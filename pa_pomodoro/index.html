@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pomodoro Clock</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body class="vsc-initialized">
+  <div class="pomodoro">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="row">
+        <p>session length
+        </p><p>
+      </p></div>
+      <div class="row counter">
+        <div class="col-md-4">
+          <button class="btn btn-default" id="sessDec">-</button>
+        </div>
+        <div class="col-md-2">
+          <div id="session">25</div>
+        </div>
+        <div class="col-md-4">
+          <button class="btn btn-default" id="sessInc">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="row">
+        <p>break length
+        </p><p>
+      </p></div>
+      <div class="row counter">
+        <div class="col-md-4">
+          <button class="btn btn-default" id="breakDec">-</button>
+        </div>
+        <div class="col-md-2">
+          <div id="break">5</div>
+        </div>
+        <div class="col-md-4">
+          <button class="btn btn-default" id="breakInc">+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="clock" class="row">
+    <div class="timer flip-clock-wrapper"><span class="flip-clock-divider minutes"><span class="flip-clock-label">Minutes</span><span class="flip-clock-dot top"></span><span class="flip-clock-dot bottom"></span></span><ul class="flip "><li class="flip-clock-before"><a href="#"><div class="up"><div class="shadow"></div><div class="inn">9</div></div><div class="down"><div class="shadow"></div><div class="inn">9</div></div></a></li><li class="flip-clock-active"><a href="#"><div class="up"><div class="shadow"></div><div class="inn">0</div></div><div class="down"><div class="shadow"></div><div class="inn">0</div></div></a></li></ul><ul class="flip "><li class="flip-clock-before"><a href="#"><div class="up"><div class="shadow"></div><div class="inn">9</div></div><div class="down"><div class="shadow"></div><div class="inn">9</div></div></a></li><li class="flip-clock-active"><a href="#"><div class="up"><div class="shadow"></div><div class="inn">0</div></div><div class="down"><div class="shadow"></div><div class="inn">0</div></div></a></li></ul><span class="flip-clock-divider seconds"><span class="flip-clock-label">Seconds</span><span class="flip-clock-dot top"></span><span class="flip-clock-dot bottom"></span></span><ul class="flip "><li class="flip-clock-before"><a href="#"><div class="up"><div class="shadow"></div><div class="inn">9</div></div><div class="down"><div class="shadow"></div><div class="inn">9</div></div></a></li><li class="flip-clock-active"><a href="#"><div class="up"><div class="shadow"></div><div class="inn">0</div></div><div class="down"><div class="shadow"></div><div class="inn">0</div></div></a></li></ul><ul class="flip "><li class="flip-clock-before"><a href="#"><div class="up"><div class="shadow"></div><div class="inn">9</div></div><div class="down"><div class="shadow"></div><div class="inn">9</div></div></a></li><li class="flip-clock-active"><a href="#"><div class="up"><div class="shadow"></div><div class="inn">0</div></div><div class="down"><div class="shadow"></div><div class="inn">0</div></div></a></li></ul></div>
+  </div>
+  <div class="row" id="statRow">
+    <div id="stats">pomodoro</div>
+  </div>
+  <div class="container">
+    <div class="row" id="btns">
+      <button class="btn btn-default btn-lg" id="start">start</button>
+      <button class="btn btn-default btn-lg" id="stop">stop</button>
+      <button class="btn btn-default btn-lg" id="clear">clear</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.min.js"></script>
+</div>
+</body>
+
+
+</html>
