@@ -4,6 +4,7 @@ let isRunning = false
 let clock;
 
 const countdownEl = document.getElementById('countdown')
+const counterButton  = document.getElementById('start')
 
 function update_timer() {
     const minutes = Math.floor((time / 60));
@@ -16,10 +17,12 @@ function update_timer() {
 function updateCountDown() {
     if (time>0) {
         isRunning = true;
+        counterButton.innerHTML = 'Pause'
         time--;
         update_timer()
     } else {
         isRunning = false;
+        counterButton.innerHTML = 'Start'
         clearInterval(clock)
         time = startingMinutes * 60
         update_timer()
@@ -30,8 +33,17 @@ function start() {
     if (isRunning) {
         clearInterval(clock);
         isRunning = false;
+        counterButton.innerHTML = 'Resume'
     } else {
         clock = setInterval(updateCountDown, 1000);
     }
+}
+
+function period(selected_time) {
+    time = selected_time*60
+    isRunning = false;
+    update_timer()
+    clearInterval(clock)
+    counterButton.innerHTML = 'Start'
 }
 

@@ -6,8 +6,15 @@
     <link rel="stylesheet" href="static/css/styles.css">
 </head>
 <body>
-    <p id="countdown">10:00</p>
+    <div class="center">
+        <div>
+            <button class="period" onclick=period(25)>Pomodoro</button>
+            <button class="period" onclick=period(5)>Short Break</button>
+            <button class="period" onclick=period(15)>Long Break</button>
+        </div>
+        <p id="countdown" class="timer">10:00</p>
+        <button id="start" onclick=start()>Start</button>
+    </div>
     <script src="static/js/script.js"></script>
-    <button id="start" onclick=start()>My Button</button>
 </body>
 </html>
