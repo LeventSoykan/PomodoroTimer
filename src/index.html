@@ -4,16 +4,32 @@
     <meta charset="UTF-8">
     <title>Pomodoro Timer</title>
     <link rel="stylesheet" href="static/css/styles.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 </head>
 <body>
     <div class="center">
-        <div>
+        <div class="button-select">
             <button class="period" onclick=period(25)>Pomodoro</button>
             <button class="period" onclick=period(5)>Short Break</button>
             <button class="period" onclick=period(15)>Long Break</button>
         </div>
-        <p id="countdown" class="timer">10:00</p>
+        <div class="countdown">
+            <p id="countdown" class="timer">10:00</p>
+        </div>
         <button id="start" onclick=start()>Start</button>
+        <button id="settings" onclick=settings()>Settings</button>
+        <dialog id="myDialog">
+            This is an open dialog window
+            <form class="setting-form">
+                <label>Short Break</label>
+                <input class="time-select" type="number" name="time-select" min="1" value="1">
+                <label>Long Break</label>
+                <input class="time-select" type="number" name="time-select" min="1" value="1">
+                <label>Pomodoro</label>
+                <input class="time-select" type="number" name="time-select" min="1" value="1">
+            </form>
+            <button id="close-dialog" onclick=closeDialog()>Close</button>
+        </dialog>
     </div>
     <script src="static/js/script.js"></script>
 </body>

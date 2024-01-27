@@ -47,3 +47,20 @@ function period(selected_time) {
     counterButton.innerHTML = 'Start'
 }
 
+function select(selection, box) {
+    if (selection > 60) {
+        alert('Please select a value below 60 minutes')
+    } else {
+
+    }
+}
+
+function settings() {
+    document.getElementById("myDialog").open = true;
+}
+
+function closeDialog() {
+    document.getElementById("myDialog").open = false;
+}
+
+
