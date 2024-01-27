@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <title>Pomodoro Timer</title>
     <link rel="stylesheet" href="static/css/styles.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 </head>
 <body>
     <div class="center">
         <div class="button-select">
-            <button class="period" onclick=period(25)>Pomodoro</button>
-            <button class="period" onclick=period(5)>Short Break</button>
-            <button class="period" onclick=period(15)>Long Break</button>
+            <button class="period" onclick=period(this)>Pomodoro</button>
+            <button class="period" onclick=period(this)>Short Break</button>
+            <button class="period" onclick=period(this)>Long Break</button>
         </div>
         <div class="countdown">
             <p id="countdown" class="timer">10:00</p>
@@ -19,14 +19,15 @@
         <button id="start" onclick=start()>Start</button>
         <button id="settings" onclick=settings()>Settings</button>
         <dialog id="myDialog">
-            This is an open dialog window
-            <form class="setting-form">
+            <form class="setting-form" id="form">
+                <h4>SETTINGS</h4>
                 <label>Short Break</label>
-                <input class="time-select" type="number" name="time-select" min="1" value="1">
+                <input class="time-select" id="short" type="number" name="short" min="1" value="1">
                 <label>Long Break</label>
-                <input class="time-select" type="number" name="time-select" min="1" value="1">
+                <input class="time-select" id="long" type="number" name="long" min="1" value="1">
                 <label>Pomodoro</label>
-                <input class="time-select" type="number" name="time-select" min="1" value="1">
+                <input class="time-select" id="pomodoro" type="number" name="pomodoro" min="1" value="1">
+                <input class="save-btn" type="submit" name="save" value="SAVE">
             </form>
             <button id="close-dialog" onclick=closeDialog()>Close</button>
         </dialog>

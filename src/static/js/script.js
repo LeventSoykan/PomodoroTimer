@@ -1,10 +1,17 @@
-const startingMinutes = 10
+let startingMinutes = 10
 let time = startingMinutes * 60
 let isRunning = false
 let clock;
+let short_duration = 5;
+let long_duration = 15;
+let pomodoro_duration = 10;
 
 const countdownEl = document.getElementById('countdown')
 const counterButton  = document.getElementById('start')
+const long_input = document.getElementById('long')
+const pomodoro_input = document.getElementById('pomodoro')
+const short_input = document.getElementById('short')
+const form = document.getElementById('form')
 
 function update_timer() {
     const minutes = Math.floor((time / 60));
@@ -39,8 +46,19 @@ function start() {
     }
 }
 
-function period(selected_time) {
-    time = selected_time*60
+function period(element) {
+    switch (element.innerHTML) {
+        case 'Short Break':
+            startingMinutes = short_duration;
+            break;
+        case 'Long Break':
+            startingMinutes = long_duration
+            break;
+        case 'Pomodoro':
+            startingMinutes = pomodoro_duration
+            break;
+    }
+    time = startingMinutes*60
     isRunning = false;
     update_timer()
     clearInterval(clock)
@@ -63,4 +81,20 @@ function closeDialog() {
     document.getElementById("myDialog").open = false;
 }
 
+function save_settings() {
+    pomodoro_duration = pomodoro_input.innerHTML
+    short_duration = pomodoro_input.innerHTML
+    long_duration = pomodoro_input.innerHTML
+    console.log(pomodoro_duration)
+    // closeDialog()
+}
 
+
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
+  const data = new FormData(form);
+  pomodoro_duration = data.get('pomodoro');
+  long_duration = data.get('long');
+  short_duration = data.get('short');
+  console.log(short_duration)
+})

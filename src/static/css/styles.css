@@ -45,7 +45,7 @@ p {
 }
 
 
-#start {
+#start, #settings {
     background-color: orange;
     color: #333333;
     font-size: xx-large;
