@@ -1,10 +1,10 @@
-let startingMinutes = 10
+let startingMinutes = 25
 let time = startingMinutes * 60
 let isRunning = false
 let clock;
 let short_duration = 5;
 let long_duration = 15;
-let pomodoro_duration = 10;
+let pomodoro_duration = 25;
 
 const countdownEl = document.getElementById('countdown')
 const counterButton  = document.getElementById('start')
@@ -20,6 +20,8 @@ function update_timer() {
 
     countdownEl.innerHTML = `${minutes}: ${seconds}`;
 }
+
+update_timer()
 
 function updateCountDown() {
     if (time>0) {
