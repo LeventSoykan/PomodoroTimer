@@ -1,0 +1,15 @@
+version: '1.0'
+services:
+  pomodoro:
+    container_name: 'pomodoro-app'
+    image: pomodoro:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./httpd.conf:/etc/apache2/httpd.conf
+      - ./html::/var/www/localhost/htdocs/
+    networks:
+      - pomodoro-network
+networks:
+  pomodoro-network:
+    driver: bridge
