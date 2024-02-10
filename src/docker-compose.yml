@@ -4,12 +4,17 @@ services:
     container_name: 'pomodoro-app'
     image: pomodoro:latest
     ports:
-      - "80:80"
+      - "591:591"
     volumes:
       - ./httpd.conf:/etc/apache2/httpd.conf
-      - ./html::/var/www/localhost/htdocs/
+      - ./html:/var/www/localhost/htdocs/
+      - /docker-volumes/etc/letsencrypt/pomo/live/chronopomo.com/cert.pem:/etc/letsencrypt/live/chronopomo.com/cert.pem
+      - /docker-volumes/etc/letsencrypt/pomo/live/chronopomo.com/fullchain.pem:/etc/letsencrypt/live/chronopomo.com/fullchain.pem
+      - /docker-volumes/etc/letsencrypt/pomo/live/chronopomo.com/privkey.pem:/etc/letsencrypt/live/chronopomo.com/privkey.pem
     networks:
       - pomodoro-network
+    environment:
+      - server_name=chronopomo.com
 networks:
   pomodoro-network:
     driver: bridge

@@ -8,76 +8,58 @@ body {
 }
 
 .countdown {
-    font-size: 10px;
     color: darkorange;
-    vertical-align: center;
-    horiz-align: center;
-    align-content: center;
     text-align: center;
 }
 
 #countdown {
     background-color: slategray;
-}
-
-p {
-    background-color: #fff;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
     font-size: 50px;
-    margin: 0;
-    height: 70px;
-    width: 200px;
+    padding: 10px;
 }
 
 .center {
     border: 5px solid;
-    margin: auto;
-    display: inline-grid;
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin: 10% auto;
+    max-width: 80%;
     padding: 10px;
-    height: 25%;
-    width: 25%;
-}
-
-
-#start, #settings {
-    background-color: orange;
-    color: #333333;
-    font-size: xx-large;
 }
 
 .button-select {
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    height: 30%;
+    text-align: center;
 }
 
 .period {
     background-color: lightgrey;
-    width: auto;
     border: 2px solid darkblue;
     padding: 5px;
     margin: 5px;
-    font-size: x-small;
+    font-size: 14px;
+}
+
+#start, #settings {
+    background-color: orange;
+    color: #333333;
+    font-size: 20px;
+    margin-top: 10px;
+    display: block;
+    width: 100%;
 }
 
 .setting-form {
-    display: inline-grid;
+    text-align: center;
 }
 
 .time-select {
-    position: relative;
     margin-top: 15px;
-    width: 30%;
+    width: 50px;
     line-height: 30px;
-    text-indent: 10px;
-    font-weight: normal;
+    text-align: center;
     font-size: 14px;
     border: 2px solid #8d8d8d;
+}
+
+.save-btn {
+    margin-top: 20px;
+    font-size: 16px;
 }
