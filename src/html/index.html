@@ -9,15 +9,19 @@
 <body>
     <div class="center">
         <div class="button-select">
-            <button class="period" onclick="period(this)">Pomodoro</button>
-            <button class="period" onclick="period(this)">Short Break</button>
-            <button class="period" onclick="period(this)">Long Break</button>
+            <div id="button-center">
+                <button class="period" onclick="period(this)">Pomodoro</button>
+                <button class="period" onclick="period(this)">Short Break</button>
+                <button class="period" onclick="period(this)">Long Break</button>
+            </div>
         </div>
         <div class="countdown">
             <p id="countdown" class="timer">10:00</p>
         </div>
-        <button id="start" onclick="start()">Start</button>
-        <button id="settings" onclick="settings()">Settings</button>
+        <div class="button-div">
+            <button id="start" onclick="start()">Start</button>
+            <button id="settings" onclick="settings()">Settings</button>
+        </div>
         <dialog id="myDialog">
             <form class="setting-form" id="form">
                 <h4>SETTINGS</h4>

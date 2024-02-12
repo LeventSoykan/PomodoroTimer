@@ -10,12 +10,18 @@ body {
 .countdown {
     color: darkorange;
     text-align: center;
+    display: flex;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    width: 100%;
 }
 
 #countdown {
     background-color: slategray;
+    margin: 0 auto;
     font-size: 50px;
     padding: 10px;
+    width: 20%;
 }
 
 .center {
@@ -25,25 +31,44 @@ body {
     padding: 10px;
 }
 
+#button-center {
+    width: 40%;
+    margin: 0 auto;
+    display: flex;
+}
+
 .button-select {
     text-align: center;
+    width: 100%;
+    display: flex;
 }
 
 .period {
     background-color: lightgrey;
     border: 2px solid darkblue;
     padding: 5px;
-    margin: 5px;
+    margin: 10px auto;
+    height: 100%;
+    width: 30%;
     font-size: 14px;
+    font-weight: bold;
+}
+
+.button-div {
+    width: 100%;
+    overflow: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 #start, #settings {
     background-color: orange;
     color: #333333;
     font-size: 20px;
-    margin-top: 10px;
-    display: block;
-    width: 100%;
+    text-align: center;
+    width: 30%;
+    margin: 0 auto;
 }
 
 .setting-form {
