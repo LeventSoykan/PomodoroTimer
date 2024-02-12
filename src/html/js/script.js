@@ -12,6 +12,7 @@ const long_input = document.getElementById('long')
 const pomodoro_input = document.getElementById('pomodoro')
 const short_input = document.getElementById('short')
 const form = document.getElementById('form')
+const periodSelect = document.getElementById('period-selection');
 
 function update_timer() {
     const minutes = Math.floor((time / 60));
@@ -99,4 +100,8 @@ form.addEventListener("submit", function(e) {
   long_duration = data.get('long');
   short_duration = data.get('short');
   console.log(short_duration)
+})
+
+periodSelect.addEventListener('click',  ({target}) => {
+    period(target)
 })
