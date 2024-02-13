@@ -4,53 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 </head>
 <body>
-    <div class="h-100 container-md d-flex align-items-center justify-content-center">
-        <div class="row row-cols-1">
-            <div class="column">
-                <div class="btn-group" role="group" id="period-selection" aria-label="Basic radio toggle button group">
-                  <input type="radio" class="btn-check" name="btnradio" id="pomodoroButton" autocomplete="off" checked>
-                  <label class="btn btn-outline-primary" for="pomodoroButton">Pomodoro</label>
-
-                  <input type="radio" class="btn-check" name="btnradio" id="shortButton" autocomplete="off">
-                  <label class="btn btn-outline-primary" for="shortButton">Short Break</label>
-
-                  <input type="radio" class="btn-check" name="btnradio" id="longButton" autocomplete="off">
-                  <label class="btn btn-outline-primary" for="longButton">Long Break</label>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center">
+                <div class="btn-group btn-group-lg" role="group">
+                    <button type="button" class="btn btn-light period" onclick="period(this)">Pomodoro</button>
+                    <button type="button" class="btn btn-light period" onclick="period(this)">Short Break</button>
+                    <button type="button" class="btn btn-light period" onclick="period(this)">Long Break</button>
                 </div>
-                <div class="countdown">
+                <div class="mt-4">
                     <p id="countdown" class="timer">10:00</p>
                 </div>
-                <div class="container">
-                    <div class="row">
-                        <button id="start" onclick="start()">Start</button>
-                        <button id="settings" onclick="settings()">Settings</button>
+                <div class="mt-4">
+                    <button id="start" class="btn btn-warning btn-lg" onclick="start()">Start</button>
+                    <button id="settings" class="btn btn-secondary btn-lg">Settings</button>
+                </div>
+                <div id="myDialog" class="modal" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">SETTINGS</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <form class="setting-form" id="form">
+                                    <div class="form-group">
+                                        <label for="short">Short Break</label>
+                                        <input class="form-control time-select" id="short" type="number" name="short" min="1" value="1">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="long">Long Break</label>
+                                        <input class="form-control time-select" id="long" type="number" name="long" min="1" value="1">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pomodoro">Pomodoro</label>
+                                        <input class="form-control time-select" id="pomodoro" type="number" name="pomodoro" min="1" value="1">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-block btn-lg">SAVE</button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
-
                 </div>
             </div>
         </div>
-
-        <dialog id="myDialog">
-            <form class="setting-form" id="form">
-                <h4>SETTINGS</h4>
-                <label for="short">Short Break</label>
-                <input class="time-select" id="short" type="number" name="short" min="1" value="1">
-                <label for="long">Long Break</label>
-                <input class="time-select" id="long" type="number" name="long" min="1" value="1">
-                <label for="pomodoro">Pomodoro</label>
-                <input class="time-select" id="pomodoro" type="number" name="pomodoro" min="1" value="1">
-                <input class="save-btn" type="submit" name="save" value="SAVE">
-            </form>
-            <button id="close-dialog" onclick="closeDialog()">Close</button>
-        </dialog>
     </div>
+
     <script src="js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

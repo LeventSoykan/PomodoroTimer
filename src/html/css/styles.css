@@ -1,90 +1,19 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display');
-
 body {
     background-color: cadetblue;
     background-image: url("https://gifdb.com/images/high/starfield-dark-background-sgli8iwvguwxzovr.gif");
     font-family: 'Roboto', sans-serif;
-    margin: 0;
 }
 
-.countdown {
+.timer {
+    font-family: 'Digital', sans-serif;
+    font-size: 80px;
     color: darkorange;
-    text-align: center;
-    display: flex;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    width: 100%;
-}
-
-#countdown {
-    background-color: slategray;
-    margin: 0 auto;
-    font-size: 50px;
-    padding: 10px;
-    width: 20%;
-}
-
-.center {
-    border: 5px solid;
-    margin: 10% auto;
-    max-width: 80%;
-    padding: 10px;
-}
-
-#button-center {
-    width: 40%;
-    margin: 0 auto;
-    display: flex;
-}
-
-.button-select {
-    text-align: center;
-    width: 100%;
-    display: flex;
 }
 
 .period {
-    background-color: lightgrey;
-    border: 2px solid darkblue;
-    padding: 5px;
-    margin: 10px auto;
-    height: 100%;
-    width: 30%;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-.button-div {
-    width: 100%;
-    overflow: auto;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-}
-
-#start, #settings {
-    background-color: orange;
-    color: #333333;
-    font-size: 20px;
-    text-align: center;
-    width: 30%;
-    margin: 0 auto;
-}
-
-.setting-form {
-    text-align: center;
+    font-size: 24px;
 }
 
 .time-select {
-    margin-top: 15px;
-    width: 50px;
-    line-height: 30px;
-    text-align: center;
-    font-size: 14px;
-    border: 2px solid #8d8d8d;
-}
-
-.save-btn {
-    margin-top: 20px;
-    font-size: 16px;
+    width: 150px;
 }
