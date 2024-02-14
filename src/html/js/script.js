@@ -5,6 +5,7 @@ let clock;
 let short_duration = 5;
 let long_duration = 15;
 let pomodoro_duration = 25;
+let selected = 'Pomodoro Timer';
 
 const countdownEl = document.getElementById('countdown');
 const counterButton = document.getElementById('start');
@@ -12,8 +13,8 @@ const long_input = document.getElementById('long');
 const pomodoro_input = document.getElementById('pomodoro');
 const short_input = document.getElementById('short');
 const form = document.getElementById('form');
-const periodSelect = document.querySelector('.button-select');
 const alarmSound = new Audio('static/alarm.mp3'); // Path to your alarm sound file
+const title = document.getElementById('title');
 
 update_timer();
 updateSettingsModal();
@@ -24,6 +25,7 @@ function update_timer() {
 
     seconds = seconds < 10 ? '0' + seconds : seconds;
     countdownEl.innerHTML = `${minutes}:${seconds}`;
+    title.innerHTML = `${minutes}:${seconds} - ${selected}`
 
     if (time === 0) {
         alarmSound.play();
@@ -56,6 +58,7 @@ function start() {
 }
 
 function period(element) {
+    selected = element.innerHTML;
     switch (element.innerHTML) {
         case 'Short Break':
             startingMinutes = short_duration;
@@ -72,6 +75,7 @@ function period(element) {
     update_timer();
     clearInterval(clock);
     counterButton.innerHTML = 'Start';
+    title.innerHTML = 'Pomodoro Timer';
 }
 
 document.getElementById('settings').addEventListener('click', function () {
