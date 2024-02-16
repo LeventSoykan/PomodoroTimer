@@ -20,27 +20,13 @@ update_timer();
 updateSettingsModal();
 
 function update_timer() {
-    const minutes = Math.floor((time / 60));
+    let minutes = Math.floor((time / 60));
     let seconds = time % 60;
 
+    minutes = minutes < 10 ? '0' + minutes : minutes;
     seconds = seconds < 10 ? '0' + seconds : seconds;
     countdownEl.innerHTML = `${minutes}:${seconds}`;
     title.innerHTML = `${minutes}:${seconds} - ${selected}`
-}
-
-function updateCountDown() {
-    if (time > 0) {
-        isRunning = true;
-        counterButton.innerHTML = 'Pause';
-        time--;
-        update_timer();
-    } else {
-        isRunning = false;
-        counterButton.innerHTML = 'Start';
-        clearInterval(clock);
-        time = startingMinutes * 60;
-        update_timer();
-    }
 }
 
 function start() {
@@ -63,12 +49,10 @@ function start() {
             if (time===0) {
                 counterButton.innerHTML = 'Start';
                 time = startingMinutes * 60;
-                update_timer()
                 alarmSound.play()
                 title.innerHTML = `${selected}`;
             }
-            countdownEl.innerHTML = `${minutes}:${seconds}`;
-            title.innerHTML = `${minutes}:${seconds} - ${selected}`;
+            update_timer()
         };
     }
 }
@@ -113,7 +97,6 @@ function save_settings() {
     pomodoro_duration = parseInt(pomodoro_input.value);
     short_duration = parseInt(short_input.value);
     long_duration = parseInt(long_input.value);
-    console.log(pomodoro_duration);
     updateSettingsModal();
     $('#myDialog').modal('hide');
 }

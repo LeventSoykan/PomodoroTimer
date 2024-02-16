@@ -3,7 +3,6 @@ let paused = false;
 
 self.onmessage = function (e) {
     if (e.data === 'pause') {
-        console.log('pause called')
         clearInterval(interval);
         paused = true;
     } else {
