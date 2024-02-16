@@ -1,11 +1,11 @@
 let startingMinutes = 25;
 let time = startingMinutes * 60;
 let isRunning = false;
-let clock;
 let short_duration = 5;
 let long_duration = 15;
 let pomodoro_duration = 25;
 let selected = 'Pomodoro Timer';
+const clock = new Worker('js/timer_worker.js');
 
 const countdownEl = document.getElementById('countdown');
 const counterButton = document.getElementById('start');
@@ -26,10 +26,6 @@ function update_timer() {
     seconds = seconds < 10 ? '0' + seconds : seconds;
     countdownEl.innerHTML = `${minutes}:${seconds}`;
     title.innerHTML = `${minutes}:${seconds} - ${selected}`
-
-    if (time === 0) {
-        alarmSound.play();
-    }
 }
 
 function updateCountDown() {
@@ -49,17 +45,41 @@ function updateCountDown() {
 
 function start() {
     if (isRunning) {
-        clearInterval(clock);
+        clock.postMessage("pause");
         isRunning = false;
         counterButton.innerHTML = 'Resume';
+        update_timer()
     } else {
-        clock = setInterval(updateCountDown, 1000);
+        const minutes = Math.floor((time / 60));
+        let seconds = time % 60;
+        isRunning = true;
+        counterButton.innerHTML = 'Pause';
+
+        clock.postMessage([minutes, seconds]);
+
+        clock.onmessage = function (e) {
+            let [minutes, seconds] = e.data;
+            time = minutes*60 + seconds
+            if (time===0) {
+                counterButton.innerHTML = 'Start';
+                time = startingMinutes * 60;
+                update_timer()
+                alarmSound.play()
+                title.innerHTML = `${selected}`;
+            }
+            countdownEl.innerHTML = `${minutes}:${seconds}`;
+            title.innerHTML = `${minutes}:${seconds} - ${selected}`;
+        };
     }
 }
 
 function period(element) {
     selected = element.innerHTML;
-    switch (element.innerHTML) {
+    applySelected(selected)
+}
+
+function applySelected(selected) {
+    switch (selected) {
         case 'Short Break':
             startingMinutes = short_duration;
             break;
@@ -73,9 +93,9 @@ function period(element) {
     time = startingMinutes * 60;
     isRunning = false;
     update_timer();
-    clearInterval(clock);
+    clock.postMessage("pause");
     counterButton.innerHTML = 'Start';
-    title.innerHTML = 'Pomodoro Timer';
+    title.innerHTML = `${selected}`;
 }
 
 document.getElementById('settings').addEventListener('click', function () {
@@ -86,6 +106,7 @@ function updateSettingsModal() {
     document.getElementById('short').value = short_duration;
     document.getElementById('pomodoro').value = pomodoro_duration;
     document.getElementById('long').value = long_duration;
+    applySelected(selected)
 }
 
 function save_settings() {
