@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="title">Pomodoro Timer</title>
+    <title>Pomodoro Timer</title>
+    <meta name="description" content="Increase productivity with the Pomodoro Technique.">
+    <meta name="keywords" content="Pomodoro Timer, Productivity, Time Management">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -11,6 +13,29 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Pomodoro Timer</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="blog.html">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-6 text-center">
@@ -24,34 +49,35 @@
                 </div>
                 <div class="mt-4">
                     <button id="start" class="btn btn-warning btn-lg" onclick="start()">Start</button>
-                    <button id="settings" class="btn btn-secondary btn-lg">Settings</button>
+                    <button id="settings" class="btn btn-secondary btn-lg" data-toggle="modal" data-target="#myDialog">Settings</button>
                 </div>
-                <div id="myDialog" class="modal" role="dialog">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title">SETTINGS</h4>
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            </div>
-                            <div class="modal-body">
-                                <form class="setting-form" id="form">
-                                    <div class="form-group">
-                                        <label for="short">Short Break</label>
-                                        <input class="form-control time-select" id="short" type="number" name="short" min="1" value="1">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="long">Long Break</label>
-                                        <input class="form-control time-select" id="long" type="number" name="long" min="1" value="1">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="pomodoro">Pomodoro</label>
-                                        <input class="form-control time-select" id="pomodoro" type="number" name="pomodoro" min="1" value="1">
-                                    </div>
-                                    <button type="submit" class="btn btn-primary btn-block btn-lg">SAVE</button>
-                                </form>
-                            </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="myDialog" class="modal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">SETTINGS</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form class="setting-form" id="form">
+                        <div class="form-group">
+                            <label for="short">Short Break</label>
+                            <input class="form-control time-select" id="short" type="number" name="short" min="1" value="1">
                         </div>
-                    </div>
+                        <div class="form-group">
+                            <label for="long">Long Break</label>
+                            <input class="form-control time-select" id="long" type="number" name="long" min="1" value="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="pomodoro">Pomodoro</label>
+                            <input class="form-control time-select" id="pomodoro" type="number" name="pomodoro" min="1" value="1">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block btn-lg">SAVE</button>
+                    </form>
                 </div>
             </div>
         </div>
