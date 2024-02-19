@@ -17,3 +17,8 @@ body {
 .time-select {
     width: 150px;
 }
+
+.logo {
+   width: auto;
+   height: 100%;
+}
