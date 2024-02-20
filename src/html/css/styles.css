@@ -18,7 +18,13 @@ body {
     width: 150px;
 }
 
-.logo {
-   width: auto;
-   height: 100%;
+.navbar-brand img
+{
+    max-height: 30px; /* Adjust the max-height as needed */
+    margin-right: 5px; /* Optional: Add some margin between the logo and text */
 }
+
+/*.logo {*/
+/*   width: auto;*/
+/*   height: 100%;*/
+/*}*/
