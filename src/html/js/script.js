@@ -4,7 +4,7 @@ let isRunning = false;
 let short_duration = 5;
 let long_duration = 15;
 let pomodoro_duration = 25;
-let selected = 'Pomodoro Timer';
+let selected = 'Pomodoro';
 const clock = new Worker('js/timer_worker.js');
 
 const countdownEl = document.getElementById('countdown');
@@ -51,6 +51,7 @@ function start() {
                 time = startingMinutes * 60;
                 alarmSound.play()
                 title.innerHTML = `${selected}`;
+                isRunning = false;
             }
             update_timer()
         };
