@@ -1,18 +1,13 @@
 body {
     background-color: cadetblue;
-    background-image: url("../static/images/coffee-work-desk.jpg");
-    background-size: 100%;
-    /*background-image: url("https://gifdb.com/images/high/starfield-dark-background-sgli8iwvguwxzovr.gif");*/
+    background-image: url("https://gifdb.com/images/high/starfield-dark-background-sgli8iwvguwxzovr.gif");
     font-family: 'Roboto', sans-serif;
 }
 
 .timer {
     font-family: 'Digital', sans-serif;
     font-size: 80px;
-    color: black;
-    /*padding: 5px;*/
-    border: black solid 5px;
-    border-radius: 5em;
+    color: darkorange;
 }
 
 .period {
