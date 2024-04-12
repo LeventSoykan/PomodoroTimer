@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boost Your Productivity with Pomodoro Technique</title>
+    <link rel="icon" href="static/images/pomodoro.png" type="image/icon type">
+    <link rel="stylesheet" href="css/styles.css">
+    <meta name="description" content="Learn how to boost your productivity using the Pomodoro Technique.">
+    <meta name="keywords" content="Productivity, Time Management, Pomodoro Technique">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3425614419722484"
+     crossorigin="anonymous"></script>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6W2E06110L"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6W2E06110L');
+</script>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="static/images/pomodoro.png" alt="Pomodoro">
+            Pomodoro Timer
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="blog.html">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5 text-light">
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Boost Your Productivity with Pomodoro Technique</h2>
+                <p>Are you struggling with distractions and finding it hard to stay focused on your tasks? Do you often procrastinate and find yourself wasting precious time? If so, you're not alone. Many people struggle with productivity, especially in today's fast-paced world where distractions are everywhere. However, there is a simple technique that can help you overcome these challenges and boost your productivity: the Pomodoro Technique.</p>
+                <p>The Pomodoro Technique is a time management method developed by Francesco Cirillo in the late 1980s. It involves breaking your work into intervals, traditionally 25 minutes in length, separated by short breaks. These intervals are called "Pomodoros," named after the Italian word for tomato, inspired by the tomato-shaped kitchen timer that Cirillo used as a university student.</p>
+                <p>Here's how the Pomodoro Technique works:</p>
+                <ol>
+                    <li>Choose a task you want to work on.</li>
+                    <li>Set a timer for 25 minutes and work on the task until the timer rings.</li>
+                    <li>Take a short break (5 minutes).</li>
+                    <li>Repeat the process. After completing four Pomodoros, take a longer break (15-30 minutes).</li>
+                </ol>
+                <p>The Pomodoro Technique is effective for several reasons. First, it breaks your work into manageable chunks, making it easier to stay focused and avoid burnout. Second, the frequent breaks help prevent fatigue and maintain high levels of motivation and energy. Finally, the Pomodoro Technique encourages a sense of urgency and helps you overcome procrastination by creating a sense of accountability.</p>
+                <p>In conclusion, if you're looking for a simple and effective way to boost your productivity and overcome distractions, give the Pomodoro Technique a try. By breaking your work into manageable intervals and taking regular breaks, you can stay focused, motivated, and productive throughout the day.</p>
+            </div>
+            <div class="col-md-4">
+                <img src="static/images/blog_image.jpeg" alt="Pomodoro Technique" class="img-fluid">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+</body>
+</html>
